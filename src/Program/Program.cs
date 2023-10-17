@@ -21,7 +21,7 @@ namespace Program
             // Enviar un SMS a algunos contactos
 
             var whatsApp = new WhatsAppApi();
-            whatsApp.Send("+598<091952205", "Hey! I'm using WhatsApp");
+            whatsApp.Send("+598<095446367>", "Hey! I'm using WhatsApp");
         }
     }
 }
