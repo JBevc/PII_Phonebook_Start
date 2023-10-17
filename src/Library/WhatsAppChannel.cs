@@ -8,6 +8,6 @@ public class WhatsAppChannel : IMessageChannel
 
     public Message CreateMessage(Contact from, Contact to)
     {
-        return new WhatsAppMessage(to);
+        return new WhatsAppMessage(from,to);
     }
 }
