@@ -1,6 +1,7 @@
 ﻿using System;
 using Library;
 
+
 namespace Program
 {
     class Program
@@ -18,6 +19,9 @@ namespace Program
             // Enviar un WhatsApp a algunos contactos
 
             // Enviar un SMS a algunos contactos
+
+            var whatsApp = new WhatsAppApi();
+            whatsApp.Send("+598<091952205", "Hey! I'm using WhatsApp");
         }
     }
 }
