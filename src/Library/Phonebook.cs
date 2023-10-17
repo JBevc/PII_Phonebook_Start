@@ -4,12 +4,12 @@ namespace Library
 {
     public class Phonebook
     {
-        private List<Contact> persons;
+        private List<Contact> people;
 
         public Phonebook(Contact owner)
         {
             this.Owner = owner;
-            this.persons = new List<Contact>();
+            this.people = new List<Contact>();
         }
 
         public Contact Owner { get; }
@@ -18,7 +18,7 @@ namespace Library
         {
             List<Contact> result = new List<Contact>();
 
-            foreach (Contact person in this.persons)
+            foreach (Contact person in this.people)
             {
                 foreach (string name in names)
                 {
@@ -30,6 +30,35 @@ namespace Library
             }
 
             return result;
+        }
+
+         public void AddContact(Contact contact)
+        {
+            //Contact contact = new Contact(name, phone, email);
+            people.Add(contact);
+        }
+
+        public void DeleteContact(Contact contact)
+        {
+            people.Remove(contact);
+        }
+
+        public Contact GetContact(string contactName)
+        {
+            foreach (Contact contact in people)
+            {
+                if (contact.Name == contactName)
+                {
+                    return contact;
+                }
+            }
+            return null;
+        }
+
+        public void SendMessage(Contact from, Contact to, string text)
+        {
+            Message message = WhatsAppChannel.CreateMessage(from, to , text);
+            WhatsAppChannel.Send(message);
         }
     }
 }

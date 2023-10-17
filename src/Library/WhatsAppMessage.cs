@@ -2,8 +2,7 @@ namespace Library;
 
 public class WhatsAppMessage : Message
 {
-    public WhatsAppMessage(Contact from, Contact to) :
-        base(from.Phone, to.Phone)
+    public WhatsAppMessage(Contact contact, string text) : base(null, contact.Phone, text)
     {
         // Intencionalmente en blanco
     }

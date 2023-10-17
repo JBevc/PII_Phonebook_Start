@@ -2,16 +2,17 @@ namespace Library
 {
     public class Message
     {
-        protected Message(string from, string to)
+        protected Message(Contact from, Contact to, string text)
         {
             this.From = from;
             this.To = to;
+            this.Text = text;
         }
 
         public string Text { get; set; }
 
-        public string From { get; }
+        public Contact From { get; }
 
-        public string To { get; }
+        public Contact To { get; }
     }
 }
