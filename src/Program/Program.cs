@@ -23,7 +23,7 @@ namespace Program
             // Enviar un correo a algunos contactos
 
             // Enviar un WhatsApp a algunos contactos
-            phonebook.SendMessage(belu, bruno, "papafrita");
+            phonebook.SendMessage(belu, bruno, "Hola");
 
             // Enviar un SMS a algunos contactos
         }
