@@ -11,7 +11,8 @@ namespace Program
              // Crear el contacto dueño
             Contact julian = new Contact("Julian", "091952205");
             Contact belu = new Contact("Belu", "095446367");
-            Contact bruno = new Contact("Flor", "092811036");
+            Contact bruno = new Contact("Bruno", "092811036");
+            Contact manuela = new Contact("Manuela", "099686903");
 
             // Crear la lista de contactos
             Phonebook phonebook = new Phonebook(julian);
@@ -23,10 +24,11 @@ namespace Program
             // Enviar un correo a algunos contactos
 
             // Enviar un WhatsApp a algunos contactos
-            phonebook.SendMessage(belu, bruno, "Hola");
+            phonebook.SendMessage(julian, bruno,"Hola");
 
             // Enviar un SMS a algunos contactos
         }
     }
 }
 
+//<ProjectReference Include="..\..\..\PII_WhatsAppApiUCU\src\Library\Library.csproj" />
