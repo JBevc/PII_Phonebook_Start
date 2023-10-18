@@ -61,8 +61,8 @@ namespace Library
 
         public void SendMessage(Contact from, Contact to, string text)
         {
-            WhatsAppChannel channel = new WhatsAppChannel();
-            Message message = channel.CreateMessage(from, to , text);
+            WhatsAppApi channel = new WhatsAppApi();
+            Message message = Message (from, to , text);
             channel.Send(message);
         }
     }
