@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Xml.XPath;
+using WhatsAppApiUCU;
 
 
 namespace Library
@@ -60,8 +61,9 @@ namespace Library
 
         public void SendMessage(Contact from, Contact to, string text)
         {
-            Message message = WhatsAppChannel.CreateMessage(from, to , text);
-            WhatsAppChannel.Send(message);
+            WhatsAppChannel channel = new WhatsAppChannel();
+            Message message = channel.CreateMessage(from, to , text);
+            channel.Send(message);
         }
     }
 }
