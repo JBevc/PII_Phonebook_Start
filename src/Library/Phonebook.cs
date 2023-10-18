@@ -9,11 +9,14 @@ namespace Library
     public class Phonebook
     {
         private List<Contact> people;
+        private IMessageChannel messageChannel;
 
         public Phonebook(Contact owner)
         {
             this.Owner = owner;
             this.people = new List<Contact>();
+
+            this.messageChannel = new WhatsAppChannel();
         }
 
         public Contact Owner { get; }
@@ -61,9 +64,8 @@ namespace Library
 
         public void SendMessage(Contact from, Contact to, string text)
         {
-            WhatsAppApi channel = new WhatsAppApi();
-            Message message = Message (from, to , text);
-            channel.Send(message);
+            Message message = messageChannel.CreateMessage(from, to, text);
+            WhatsAppApi.Send(to,message);
         }
     }
 }
